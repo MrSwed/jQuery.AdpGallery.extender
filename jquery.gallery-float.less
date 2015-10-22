@@ -1,0 +1,50 @@
+.gallery {
+	.list {
+		width: 320px;
+		float: left;
+	}
+	.content-block {
+		float: right;
+		position: relative;
+		width: 600px;
+		.view {
+			text-align: center;
+		}
+	}
+	.content-block.fixed {
+		position: fixed;
+		top: 0;
+		background: #fff;
+		z-index: 1;
+	}
+	.content-block.absolute {
+		position: absolute;
+		background: #fff;
+		z-index: 1;
+	}
+	.view {
+		text-align: center;
+		min-height: 350px;
+		.thumbs {
+			li {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+		img {
+			max-height: 600px;
+			max-width: 600px;
+			height: auto !important;
+			width: auto !important;
+			height: 600px;
+			width: 600px;
+		}
+	}
+}
+.gallery img.thumbnail, .gallery .managepicture img {
+	max-width: 135px;
+	width: auto !important;
+	width: 135px;
+	max-height: 90px;
+}

@@ -1,19 +1,47 @@
+div {
+  position: relative;
+}
+.gallery {
+  /* // position on page for example */
+  margin: 489px 0;
+  padding: 1em;
+  border: 1px dashed;
+  /* // /position on page for example */
+}
+.gallery ul {
+  clear: both;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+.gallery ul li {
+  display: inline-block;
+  height: 114px;
+  list-style-image: none !important;
+  list-style-position: outside;
+  list-style-type: none;
+  text-align: center;
+  width: 150px;
+}
 .gallery .list {
   width: 320px;
-  float: left;
 }
 .gallery .content-block {
-  float: right;
-  position: relative;
+  left: 325px;
+  margin-top: 1em;
+  position: absolute;
+  top: 0;
   width: 600px;
 }
 .gallery .content-block .view {
   text-align: center;
 }
 .gallery .content-block.fixed {
+  background: #fff none repeat scroll 0 0;
+  left: 10px;
+  margin-top: 10px;
   position: fixed;
   top: 0;
-  background: #fff;
   z-index: 1;
 }
 .gallery .content-block.absolute {

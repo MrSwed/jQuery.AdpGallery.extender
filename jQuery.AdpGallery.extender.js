@@ -54,8 +54,8 @@
 			var df = function(ohref) {
 				var vo=$('.content-block .view',g),
 						io=$(".list",vo);
-				$($p.p.item+":visible",io).fadeOut($p.p.animate.speed);
-				var ia=$($p.p.item+"["+$p.p.urlattr+"='"+ohref+"']",io);
+				$($p.p.item,io).filter(":visible").fadeOut($p.p.animate.speed);
+				var ia=$($p.p.item,io).filter("["+$p.p.urlattr+"='"+ohref+"']");
 				ia.fadeIn($p.p.animate.speed,function() {
 					// дурацкий сафари
 					vo.animate({height: ia.fullHeight()},$p.p.animate.speed);
@@ -95,14 +95,13 @@
 						$("a",io).css({"display": "block","position": "absolute"}).hide();
 						io.appendTo(cv);
 						typeof $.fn[$p.p["extender"][0]] == "function" && $("a",io).attr("rel","gallery") && 
-						$.fn[$p.p["extender"][0]].call($("a[rel='gallery']",io),($p.p["extender"][1] || null));
+						$.fn[$p.p["extender"][0]].call($($p.p.item,io).filter("[rel='gallery']"),($p.p["extender"][1] || null));
 					}
-					$('a:has(img)',l).unbind().on("click",function(e) {
+					$($p.p.item,l).unbind().on("click",function(e) {
 						e.preventDefault();
 						viewImg.call($(this));
 					});
-//					$('a:has(img):first',g).click();
-				viewImg.call($('a:has(img):first',g));
+					viewImg.call($($p.p.item,g).filter(":first"));
 					_t.AdpGallery = $p;
 					$(window).bind("scroll",onScroll);
 				};

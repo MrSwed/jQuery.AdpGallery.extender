@@ -1,13 +1,9 @@
-.stroke {
-  margin: 249px 0;
-}
 div {
   position: relative;
 }
 .gallery {
   position: relative;
   /* // position on page for example */
-  margin: 140px 0;
   padding: 1em;
   border: 1px dashed;
   /* // /position on page for example */

@@ -70,6 +70,7 @@ div {
 }
 .gallery .content-block {
   display: block;
+  float: left;
 }
 .gallery .content-block .list {
   float: none;

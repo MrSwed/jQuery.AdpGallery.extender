@@ -1,3 +1,4 @@
+/* example page */
 div {
   position: relative;
 }
@@ -8,11 +9,42 @@ div {
   justify-content: center;
 }
 .gallery {
-  align-items: flex-start;
   border: 1px dashed;
+}
+/* decorate */
+.decor1 a {
+  border: 1px solid #52DA6C;
+  padding: 3px;
+}
+.decor1 a:hover {
+  border-color: #007700;
+}
+.decor1 a:before {
+  border: 1px solid white;
+  bottom: -5px;
+  box-shadow: 0 0 5px gray;
+  content: "";
+  display: block;
+  left: -5px;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+/* gallery base style */
+.gallery {
+  align-items: flex-start;
   display: flex;
   justify-content: space-between;
   padding: 1em;
+}
+.gallery * {
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.gallery,
+.gallery * {
   position: relative;
 }
 .gallery.r {
@@ -30,41 +62,20 @@ div {
   display: inline-block;
   margin: 1em 0;
   vertical-align: middle;
-  border: 1px solid #52DA6C;
   position: relative;
-  padding: 3px;
+  max-width: 100%;
 }
 .gallery a img {
   display: block;
-  margin: 0;
-  padding: 0;
-  max-width: 270px;
-}
-.gallery a:hover {
-  border-color: #007700;
-}
-.gallery a:before {
-  border: 1px solid white;
-  bottom: -5px;
-  box-shadow: 0 0 5px gray;
-  content: "";
-  display: block;
-  left: -5px;
-  position: absolute;
-  right: -5px;
-  top: -5px;
 }
 .gallery > .list {
   display: block;
-  width: 300px;
+  width: 30vw;
   text-align: center;
 }
 .gallery .content-block {
   display: block;
-  width: 480px;
-}
-.gallery .content-block * {
-  max-width: 100%;
+  width: 48vw;
 }
 .gallery .content-block .list {
   width: 100%;

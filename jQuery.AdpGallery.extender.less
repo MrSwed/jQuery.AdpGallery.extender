@@ -1,3 +1,5 @@
+/* example page */
+
 div {
 	position: relative;
 }
@@ -8,14 +10,46 @@ div {
 	justify-content: center;
 }
 .gallery {
-	align-items: flex-start;
 	border: 1px dashed;
+}
+
+/* decorate */
+
+.decor1 {
+	a {
+		border: 1px solid #52DA6C;
+		padding: 3px;
+		&:hover {
+			border-color: #007700;
+		}
+		&:before {
+			border: 1px solid white;
+			bottom: -5px;
+			box-shadow: 0 0 5px gray;
+			content: "";
+			display: block;
+			left: -5px;
+			position: absolute;
+			right: -5px;
+			top: -5px;
+		}
+	}
+}
+
+/* gallery base style */
+
+.gallery {
+	align-items: flex-start;
 	display: flex;
 	justify-content: space-between;
 	padding: 1em;
-	position: relative;
+	* > {
+		max-width: 100%;
+		-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+	}
+	&,* {position: relative;}
 	&.r {
-		flex-direction:row-reverse;
+		flex-direction: row-reverse;
 	}
 	&:after {
 		clear: both;
@@ -30,41 +64,22 @@ div {
 		display: inline-block;
 		margin: 1em 0;
 		vertical-align: middle;
-		border: 1px solid #52DA6C;
 		position: relative;
-		padding: 3px;
+
+		max-width:100%;
+
 		img {
 			display: block;
-			margin: 0;
-			padding: 0;
-			max-width: 270px;
 		}
-	}
-	a:hover {
-		border-color: #007700;
-	}
-	a:before {
-		border: 1px solid white;
-		bottom: -5px;
-		box-shadow: 0 0 5px gray;
-		content: "";
-		display: block;
-		left: -5px;
-		position: absolute;
-		right: -5px;
-		top: -5px;
 	}
 	> .list {
 		display: block;
-		width: 300px;
+		width: 30vw;
 		text-align: center;
 	}
 	.content-block {
 		display: block;
-		width: 480px;
-		* > {
-			max-width: 100%;
-		}
+		width: 48vw;
 		.list {
 			width: 100%;
 		}
@@ -74,13 +89,13 @@ div {
 		top: 0;
 		z-index: 1;
 	}
-	.fixed,.absolute {
+	.fixed, .absolute {
 		transform: translateX(-50%);
 		z-index: 1;
 	}
 	.absolute {
 		position: absolute;
-		bottom:1em;
+		bottom: 1em;
 	}
 	.view {
 		max-width: 100%;
@@ -90,11 +105,9 @@ div {
 		}
 	}
 }
-
-
 /* fix fancybox */
 .fancybox-lock .fancybox-overlay {
- overflow: hidden;
+	overflow: hidden;
 }
 .fancybox-lock body {
 	overflow: visible !important;

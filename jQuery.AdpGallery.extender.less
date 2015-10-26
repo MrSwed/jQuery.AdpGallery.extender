@@ -1,21 +1,28 @@
 div {
 	position: relative;
 }
-
+.footer {
+	align-items: center;
+	display: flex;
+	height: 300px;
+	justify-content: center;
+}
 .gallery {
-	position: relative;
-	//padding-top:55px;
-	/* // position on page for example */
-	padding: 1em;
+	align-items: flex-start;
 	border: 1px dashed;
-	/* // /position on page for example */
-
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	position: relative;
+	&.r {
+		flex-direction:row-reverse;
+	}
 	&:after {
 		clear: both;
 		content: "";
 		display: block;
 	}
-	
+
 	> * {
 		display: none
 	}
@@ -24,7 +31,6 @@ div {
 		margin: 1em 0;
 		vertical-align: middle;
 		border: 1px solid #52DA6C;
-		display: inline-block;
 		position: relative;
 		padding: 3px;
 		img {
@@ -48,52 +54,48 @@ div {
 		right: -5px;
 		top: -5px;
 	}
-	a:after {
-		background-color: transparent;
-		background-image: url("../images/shadow-294.png");
-		background-position: center top;
-		background-repeat: no-repeat;
-		background-size: 100% 8px;
-		bottom: -13px;
-		content: "";
+	> .list {
 		display: block;
-		height: 8px;
-		left: -3px;
-		position: absolute;
-		right: -3px;
-	}
-	.list {
-		display: block;
-		float: right;
 		width: 300px;
 		text-align: center;
-		//> * {
-		// margin: 0px;
-		// padding: 0px;
-		//}
 	}
 	.content-block {
 		display: block;
-		float: left;
+		width: 480px;
+		* > {
+			max-width: 100%;
+		}
 		.list {
-			float: none;
 			width: 100%;
 		}
 	}
 	.fixed {
 		position: fixed;
-		top: 0px;
+		top: 0;
 		z-index: 1;
-		//width:auto;
+	}
+	.fixed,.absolute {
+		transform: translateX(-50%);
+		z-index: 1;
 	}
 	.absolute {
 		position: absolute;
-		z-index: 1;
+		bottom:1em;
 	}
 	.view {
+		max-width: 100%;
 		img {
-			max-width: 480px;
+			max-width: 100%;
 			width: auto !important;
 		}
 	}
+}
+
+
+/* fix fancybox */
+.fancybox-lock .fancybox-overlay {
+ overflow: hidden;
+}
+.fancybox-lock body {
+	overflow: visible !important;
 }

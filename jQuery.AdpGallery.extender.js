@@ -33,18 +33,12 @@
 			$p.p = $.extend({},$p.defaults,p);
 			if (typeof $p.p.extender != "object" ) $p.p.extender = [$p.p.extender];
 			var onScroll = function(e) {
-				//     if ( lowY < g.offset()["top"]+g.height()) lowY = g.offset()["top"] + g.height();
-				//     if (img.size() <= 5) return;
 				lowY = g.offset()["top"]+g.height();
 				var pyTop=window.pageYOffset||document.documentElement.scrollTop;
 				if (pyTop>l.offset()["top"]&&cb.not(".fixed")) {
 					cb.removeClass("absolute").addClass("fixed").css({"top": 0});
-					//      var als = $(".footer").offset()["top"] - cb.height() - 60;
 					var als=lowY-cb.height();
 					var tals=als-g.offset()["top"];
-					//      console.log(window.pageYOffset + " " + als + " " + tals + " left " + cb.offset()["left"] +
-					//          " lowY "+ lowY + " footer " + $(".footer").offset()["top"]
-					//      );
 					if (pyTop>als) {
 						cb.removeClass("fixed").addClass("absolute").css({"top": tals});
 					}
